@@ -1,0 +1,37 @@
+
+package myproject;
+import java.util.*;
+
+public class isUnique {
+	public static void main(String[] args) throws Exception 
+	{
+		Scanner console=new Scanner(System.in);
+		System.out.println("Enter a string");
+		String word=console.next();
+		
+		System.out.println("The word entered is " +word);
+		
+		boolean answer=isUnique(word); 
+		System.out.println(answer);
+		
+		
+	}
+	//Here we check if the string entered is unique or not
+	public static boolean isUnique(String text)
+	{
+			
+		boolean[] check=new boolean[128];
+		for(int i=0;i<text.length();i++)
+			{
+			int x=text.charAt(i);
+			
+	if(check[x])
+		{
+		return false;
+		}
+	check[x]=true;
+	
+			}
+		return true;
+
+}
